@@ -160,6 +160,15 @@ describe 'nginx::resource::vhost' do
           ],
         },
         {
+          :title => 'should set proxy_pass_header',
+          :attr  => 'proxy_pass_header',
+          :value => ['header1','header2'],
+          :match => [
+            '  proxy_pass_header        header1;',
+            '  proxy_pass_header        header2;',
+          ],
+        },
+        {
           :title => 'should rewrite to HTTPS',
           :attr  => 'rewrite_to_https',
           :value => true,

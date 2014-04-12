@@ -21,6 +21,7 @@ class nginx::config(
   $vhost_purge            = $nginx::params::nx_vhost_purge,
   $server_tokens          = $nginx::params::nx_server_tokens,
   $proxy_set_header       = $nginx::params::nx_proxy_set_header,
+  $proxy_pass_header      = $nginx::params::nx_proxy_pass_header,
   $proxy_cache_path       = $nginx::params::nx_proxy_cache_path,
   $proxy_cache_levels     = $nginx::params::nx_proxy_cache_levels,
   $proxy_cache_keys_zone  = $nginx::params::nx_proxy_cache_keys_zone,

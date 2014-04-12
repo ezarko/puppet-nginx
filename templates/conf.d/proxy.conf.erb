@@ -9,3 +9,5 @@ proxy_buffer_size       <%= @proxy_buffer_size %>;
 proxy_http_version      <%= @proxy_http_version %>;
 <% @proxy_set_header.each do |header| %>
 proxy_set_header        <%= header %>;<% end %>
+<% @proxy_pass_header.each do |header| %>
+proxy_pass_header       <%= header %>;<% end %>

@@ -147,6 +147,7 @@ define nginx::resource::vhost (
   $proxy                  = undef,
   $proxy_read_timeout     = $nginx::params::nx_proxy_read_timeout,
   $proxy_set_header       = [],
+  $proxy_pass_header      = [],
   $proxy_cache            = false,
   $proxy_cache_valid      = false,
   $proxy_method           = undef,
@@ -236,6 +237,7 @@ define nginx::resource::vhost (
   }
   validate_string($proxy_read_timeout)
   validate_array($proxy_set_header)
+  validate_array($proxy_pass_header)
   if ($proxy_cache != false) {
     validate_string($proxy_cache)
   }

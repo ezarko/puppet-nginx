@@ -36,6 +36,7 @@ class nginx (
   $package_ensure         = $nginx::params::package_ensure,
   $package_source         = $nginx::params::package_source,
   $proxy_set_header       = $nginx::params::nx_proxy_set_header,
+  $proxy_pass_header      = $nginx::params::nx_proxy_pass_header,
   $proxy_http_version     = $nginx::params::nx_proxy_http_version,
   $confd_purge            = $nginx::params::nx_confd_purge,
   $vhost_purge            = $nginx::params::nx_vhost_purge,
@@ -83,6 +84,7 @@ class nginx (
   validate_string($package_ensure)
   validate_string($package_source)
   validate_array($proxy_set_header)
+  validate_array($proxy_pass_header)
   validate_string($proxy_http_version)
   validate_bool($confd_purge)
   validate_bool($vhost_purge)
@@ -132,6 +134,7 @@ class nginx (
     worker_connections     => $worker_connections,
     worker_rlimit_nofile   => $worker_rlimit_nofile,
     proxy_set_header       => $proxy_set_header,
+    proxy_pass_header      => $proxy_pass_header,
     proxy_http_version     => $proxy_http_version,
     proxy_cache_path       => $proxy_cache_path,
     proxy_cache_levels     => $proxy_cache_levels,

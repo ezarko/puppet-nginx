@@ -38,6 +38,9 @@
 <% @proxy_set_header.each do |header| -%>
     proxy_set_header        <%= header %>;
 <% end -%>
+<% @proxy_pass_header.each do |header| -%>
+    proxy_pass_header       <%= header %>;
+<% end -%>
 <% if @proxy_method -%>
     proxy_method        <%= @proxy_method %>;
 <% end -%>

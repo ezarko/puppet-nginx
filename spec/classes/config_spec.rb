@@ -263,6 +263,15 @@ describe 'nginx::config' do
             'proxy_set_header        header2;',
           ],
         },
+        {
+          :title => 'should contain ordered appended directives',
+          :attr  => 'proxy_pass_header',
+          :value => ['header1','header2'],
+          :match => [
+            'proxy_pass_header        header1;',
+            'proxy_pass_header        header2;',
+          ],
+        },
       ].each do |param|
         context "when #{param[:attr]} is #{param[:value]}" do
           let :params do { param[:attr].to_sym => param[:value] } end
